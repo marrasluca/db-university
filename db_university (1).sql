@@ -57390,3 +57390,26 @@ SELECT *
 FROM exams
 WHERE date = '2020-06-20'
 AND HOUR(hour) >= 14;
+
+/* Selezionare tutti i corsi di laurea magistrale (38)*/
+SELECT *
+FROM degrees
+WHERE level = 'magistrale';
+
+/* Da quanti dipartimenti è composta l'università? (12) */
+SELECT * 
+FROM departments;
+
+/* Quanti sono gli insegnanti che non hanno un numero di telefono? (50) */
+SELECT COUNT(*) AS `insegnati senza numero`
+FROM teachers
+WHERE phone IS NULL
+
+
+/*-----------------------group--------------------*/
+SELECT COUNT(*) AS `numero_iscritti`, YEAR(enrolment_date) AS `anno`
+FROM students
+GROUP BY anno;
+
+
+
